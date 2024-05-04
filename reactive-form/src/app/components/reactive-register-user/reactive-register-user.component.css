@@ -1,0 +1,89 @@
+.container{
+    color: silver;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    max-width: 600px;
+}
+
+.row{
+    margin-top: 20px;
+}
+
+button[type="submit"].btn-primary{
+    width: 100%;
+}
+
+
+input.ng-invalid.ng-touched{
+    border: 2px solid red;
+}
+
+input.ng-pending.ng-touched{
+    border: 2px solid rgb(207, 9, 174);
+}
+
+.spin-color{
+    color: rgb(207, 9, 174);;
+}
+
+span.validation-msg{
+    color: red;
+}
+
+.control-title{
+    color: rgb(39, 206, 17);
+}
+
+.input-with-button {
+    display: flex;
+    align-items: center;
+}
+
+.input-with-button input {
+    flex: 1;
+    margin-right: 5px;
+}
+
+.exp-border{
+    border: 2px solid rgb(76, 92, 76);
+    border-radius: 6px;
+}
+
+.exp-box{
+    margin: 1rem;
+    padding: 1rem;
+    border: 2px solid rgb(54, 109, 54);
+    border-radius: 6px;
+}
+
+.exp-title{
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.add-rm-btn{
+    margin-left: 1rem;
+}
+
+/* spin */
+
+.position-relative {
+    position: relative;
+  }
+  
+  .position-absolute {
+    position: absolute;
+  }
+  
+  .end-0 {
+    right: 15px !important;
+  }
+  
+  .top-50 {
+    top: 50%;
+  }
+  
+  .translate-middle-y {
+    transform: translateY(-50%);
+  }
+  

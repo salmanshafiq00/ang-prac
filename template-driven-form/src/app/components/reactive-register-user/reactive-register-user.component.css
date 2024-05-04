@@ -1,0 +1,40 @@
+.container{
+    color: silver;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    max-width: 600px;
+}
+
+.row{
+    margin-top: 20px;
+}
+
+button[type="submit"].btn-primary{
+    width: 100%;
+}
+
+/* .add-skill-btn{
+    width: 60px;
+} */
+
+input.ng-invalid.ng-touched{
+    border: 2px solid red;
+}
+
+span.validation-msg{
+    color: red;
+}
+
+.control-title{
+    color: rgb(39, 206, 17);
+}
+
+.input-with-button {
+    display: flex;
+    align-items: center;
+}
+
+.input-with-button input {
+    flex: 1;
+    margin-right: 5px;
+}

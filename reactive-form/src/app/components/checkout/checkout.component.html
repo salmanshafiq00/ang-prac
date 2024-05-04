@@ -1,0 +1,25 @@
+<div class="container">
+    <h2>Checkout</h2>
+    <div class="checkout-form">
+      <form (ngSubmit)="submitForm()">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" class="form-control" id="firstName" [(ngModel)]="firstName" name="firstName" required>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" class="form-control" id="lastName" [(ngModel)]="lastName" name="lastName" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <textarea class="form-control" id="address" [(ngModel)]="address" name="address" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Order</button>
+      </form>
+    </div>
+  </div>
+  

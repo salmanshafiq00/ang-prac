@@ -1,0 +1,44 @@
+<section class="contact-form">
+  <h2>Get in Touch</h2>
+  <form #contact="ngForm" (ngSubmit)="onSubmit(contact)" [ngClass]="{
+    'form-untouched': contact.untouched, 
+    'form-touched': contact.touched,
+    'form-pristine': contact.pristine,
+    'form-dirty': contact.dirty}" novalidate>
+    <div>
+      <h5 *ngIf="contact.controls['name']?.untouched" class="color-untouched">Untouched</h5>
+      <h5 *ngIf="contact.controls['name']?.touched" class="color-touched">Touched</h5>
+      <h5 *ngIf="contact.controls['name']?.pristine" class="color-pristine">Pristine</h5>
+      <h5 *ngIf="contact.controls['name']?.dirty" class="color-dirty">Dirty</h5>
+    </div>
+    <div class="form-group">
+      <label for="name">Name:<span class="text-danger">*</span></label>
+      <input type="text" [ngClass]="{
+        'control-untouched': contact.controls['name']?.untouched,
+        'control-touched': contact.controls['name']?.touched,
+        'control-pristine': contact.controls['name']?.pristine,
+        'control-dirty': contact.controls['name']?.dirty,
+
+    }" id="name" name="name" ngModel required>
+      <!-- <div *ngIf="contact.controls['name']?.touched && contact.controls['name']?.invalid" class="error-message">Name is
+        required.</div> -->
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email: <span class="text-danger">*</span></label>
+      <input type="email" [ngClass]="{'control-invalid': email?.touched && email?.invalid}" id="email" name="email"
+        ngModel #email="ngModel" required>
+      <div *ngIf="email?.touched && email?.invalid" class="error-message">Please enter a valid email.</div>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="4" ngModel #message="ngModel"
+        [ngClass]="{'control-dirty': message.dirty}"></textarea>
+    </div>
+
+    <button type="submit"
+      [ngClass]="{'button-submit-enable': !contact.invalid, 'button-submit-disabled': contact.invalid}"
+      [disabled]="contact.invalid">Submit</button>
+  </form>
+</section>

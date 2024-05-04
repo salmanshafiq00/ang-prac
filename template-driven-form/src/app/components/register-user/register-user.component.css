@@ -1,0 +1,22 @@
+.container{
+    color: silver;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    max-width: 600px;
+}
+
+.row{
+    margin-top: 20px;
+}
+
+.btn-primary{
+    width: 100%;
+}
+
+input.ng-invalid.ng-touched{
+    border: 2px solid red;
+}
+
+span.validation-msg{
+    color: red;
+}

@@ -1,0 +1,22 @@
+.container{
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+input {
+    min-width: 150px;
+}
+
+.form-group{
+    margin-top: 15px;
+}
+
+.btn-primary{
+    background-color: dodgerblue;
+    border: none;
+    padding: 5px 10px;
+    width: 100%;
+    color: aliceblue;
+    font-weight: 600;
+    letter-spacing: 1px;
+}

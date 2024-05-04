@@ -1,0 +1,19 @@
+<!-- login.component.html -->
+
+<div class="login-container">
+    <div class="login-box">
+      <h2>Login</h2>
+      <form>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" #username class="form-control" placeholder="Enter your username">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" #password class="form-control" placeholder="Enter your password">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" (click)="onLogin()">Login</button>
+      </form>
+    </div>
+  </div>
+  

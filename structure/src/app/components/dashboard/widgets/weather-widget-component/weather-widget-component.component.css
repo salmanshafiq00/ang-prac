@@ -1,0 +1,19 @@
+.weather-widget {
+    background-color: #f1acac;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    margin-top: 25px;
+}
+.weather-widget img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+.weather-widget h2 {
+    margin: 0;
+}
+.weather-widget p {
+    margin: 5px 0;
+}

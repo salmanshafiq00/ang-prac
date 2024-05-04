@@ -1,0 +1,139 @@
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    margin-top: 100px;
+  }
+  .contact-form > h2, label{
+    color: silver;
+  }
+  
+  .contact-form h2 {
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .form-group textarea {
+    resize: vertical;
+  }
+  
+  .button-submit-enable {
+    background-color: #115231;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .form-invalid{
+    border: 2px solid red;
+    padding: 20px;
+    border-radius: 6px;
+  }
+
+  .form-valid{
+    border: 2px solid green;
+    padding: 20px;
+    border-radius: 6px;
+  }
+
+  .form-untouched{
+    border: 2px solid rgb(96, 255, 75);
+    padding: 20px;
+    border-radius: 6px;
+  }
+
+  .form-touched{
+    border: 2px solid rgb(255, 53, 245);
+    padding: 20px;
+    border-radius: 6px;
+  }
+
+  .form-pristine{
+    border: 2px solid rgb(62, 189, 240);
+    padding: 20px;
+    border-radius: 6px;
+  }
+
+  .form-dirty{
+    border: 2px solid rgb(207, 171, 8);
+    padding: 20px;
+    border-radius: 6px;
+  }
+
+  .form-invalid{
+    border: 2px solid red;
+    padding: 20px;
+    border-radius: 6px;
+  }
+  .control-untouched{
+    outline: 2px solid rgb(96, 255, 75);
+  }
+
+  .control-touched{
+    outline: 2px solid rgb(255, 53, 245);
+  }
+  .control-pristine{
+    outline: 2px solid rgb(62, 189, 240);
+  }
+  .control-dirty{
+    outline: 2px solid rgb(207, 171, 8);
+  }
+  .control-invalid{
+    outline: 1px solid red;
+  }
+
+  .color-untouched{
+    color: rgb(96, 255, 75);
+  }
+
+  .color-touched{
+    color: rgb(255, 53, 245);
+  }
+
+  .color-pristine{
+    color: rgb(62, 189, 240);
+  }
+
+  .color-dirty{
+    color: rgb(207, 171, 8);
+  }
+
+  .color-invalid{
+    color: red;
+  }
+ 
+  
+  .error-message{
+    color: red;
+  }
+
+  .button-submit-disabled {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }

@@ -1,0 +1,111 @@
+<div class="container">
+    <h4 class="text-success">Register Form</h4>
+    <form #register="ngForm" (ngSubmit)="submitForm()">
+
+        <div class="row">
+            <div class="col-md-6">
+                <input ngModel #firstName="ngModel" type="text" name="firstname" class="form-control"
+                    placeholder="First Name" required />
+                <div>
+                    <span class="validation-msg" *ngIf="firstName.touched && firstName.invalid">First Name is
+                        required</span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <input ngModel #lastName="ngModel" type="text" name="lastname" class="form-control" placeholder="Last Name" required />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <input ngModel #email="ngModel" type="text" name="email" class="form-control" placeholder="Email" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <input ngModel type="text" name="phonenumber" class="form-control" placeholder="Phone Number" />
+            </div>
+            <div class="col-md-6">
+                <input ngModel #dob="ngModel" type="date" name="dateofbirth" class="form-control" placeholder="dd-mm-yyyy" required="" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <input ngModel type="text" name="username" class="form-control" placeholder="Username" />
+            </div>
+<div class="col-md-4 d-flex justify-content-md-end">
+    <button 
+        (click)="getUsername()" 
+        [ngClass]="{'btn-secondary': firstName.invalid || lastName.invalid || dob.invalid, 'btn-warning': firstName.valid && lastName.valid && dob.valid}"
+        [disabled]="firstName.invalid || lastName.invalid || dob.invalid"
+        class="btn  float-md-right"  >Get Username</button>
+</div>
+        </div>
+
+        <div class="row">
+            <label for="gender">Gender</label>
+            <div class="col-md-12">
+
+                <div class="form-check form-check-inline" *ngFor="let gender of genders">
+                    <input ngModel class="form-check-input" type="radio" name="gender" [id]="gender.id"
+                        [value]="gender.value">
+                    <label class="form-check-label" [for]="gender.id">{{gender.display}}</label>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <label for="favcat">Favourite Category</label>
+            <div class="col-md-12">
+                <div class="form-check form-check-inline" *ngFor="let favcat of categories; let i = index;">
+                    <input ngModel [name]="'favcat' + (i + 1) " type="checkbox" [id]="favcat.id" [value]="favcat.value"
+                        class="form-check-input">
+                    <label class="form-check-label" [for]="favcat.id">{{favcat.display}}</label>
+                </div>
+            </div>
+        </div>
+
+        <div ngModelGroup="address">
+            <div class="row">
+                <div class="col-md-12">
+                    <input ngModel type="text" name="address1" class="form-control" placeholder="Address1" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <input ngModel type="text" name="address2" class="form-control" placeholder="Address 2" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <select ngModel type="text" name="country" class="form-control" placeholder="Country">
+                        <option value="">Choose Country</option>
+                        <option [value]="ctr.value" *ngFor="let ctr of countries">{{ctr.display}}</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <input ngModel type="text" name="city" class="form-control" placeholder="City" />
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-primary" [ngClass]="{'btn-secondary': register.invalid}"
+                    [disabled]="register.invalid">Submit</button>
+            </div>
+        </div>
+
+        <!-- <div class="row">
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div> -->
+    </form>
+</div>
+
+
+  

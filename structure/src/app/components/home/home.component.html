@@ -1,0 +1,24 @@
+<div class="container" id="top-section">
+    <!-- Product Cards -->
+    <div class="text-right" >
+      <span class="text-warning text-right" (click)="gotoFooterSection()" > ⬇️ Go to footer</span>
+    </div>
+    <product-search></product-search>
+    <div class="row">
+        <div class="product-card col-md-3" 
+          cardHighlight 
+          *ngFor="let item of productListForDisplay" 
+          (click)="getProductDetails(item)">
+            <img class="product-image" src="https://picsum.photos/200/150" alt="Product Image">
+            <div class="product-details">
+              <div class="product-name">{{item.name}}</div>
+              <div class="product-price">{{item.price}}</div>
+              <div class="product-discount">Discount: {{item.discount}}%</div>
+              <div class="product-stock" [ngClass]="{'product-in-stock': item.stockAvailable, 'product-out-of-stock': !item.stockAvailable}">{{item.stockAvailable ? 'In Stock' : 'Out Of Stock'}}</div>
+            </div>
+          </div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <a class="nav-link text-warning text-center text-bold" (click)="navigateToAbout()">About</a>
+  </div>

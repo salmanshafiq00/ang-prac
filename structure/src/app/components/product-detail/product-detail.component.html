@@ -1,0 +1,28 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6">
+      <img src="https://picsum.photos/200/150" alt="Product Image" class="img-fluid">
+    </div>
+    <div class="col-md-6">
+      <h2>{{ selectedProduct?.name }}</h2>
+      <p><strong>Price:</strong> ${{ selectedProduct?.price }}</p>
+      <p><strong>Discount:</strong> {{ selectedProduct?.discount }}%</p>
+      <p><strong>Gender:</strong> {{ selectedProduct?.gender }}</p>
+      <p><strong>Color:</strong> {{ selectedProduct?.color }}</p>
+      <p><strong>Availability: </strong> <span
+          [ngClass]="{ 'text-success': selectedProduct?.stockAvailable, 'text-danger': !selectedProduct?.stockAvailable }">{{
+          selectedProduct?.stockAvailable ? 'In Stock' : 'Out of Stock' }}</span></p>
+      <button class="btn btn-primary">Add to Cart</button>
+    </div>
+  </div>
+  <div class="navigation">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <button [routerLink]="'/products/product-detail/' + (selectedProduct?.id - 1)"> <-- Previous</button>
+      </div>
+      <div class="col-md-6">
+        <button [routerLink]="'/products/product-detail/' + (selectedProduct?.id + 1)">Next --> </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<!-- <app-search-product (productSearchedValue)="handleSearchedValue($event)"></app-search-product>
+<app-product [searchedText]="searchedValue"></app-product> -->
+
+<app-search-product #search></app-search-product>
+<app-product #productList [searchedText]="search.searchedText"></app-product>
+
+<product-detail *ngIf="productList?.selectedProduct" [productListCom]="productList"></product-detail>
+

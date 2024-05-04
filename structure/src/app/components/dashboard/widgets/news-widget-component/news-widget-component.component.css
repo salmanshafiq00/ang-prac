@@ -1,0 +1,28 @@
+.news-widget {
+    background-color: #bbb3e5;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .news-widget h2 {
+    margin-top: 0;
+  }
+  
+  .news-widget ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .news-widget li {
+    margin-bottom: 20px;
+  }
+  
+  .news-widget h3 {
+    margin: 0;
+  }
+  
+  .news-widget p {
+    margin: 5px 0;
+  }
+  

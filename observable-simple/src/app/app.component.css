@@ -1,0 +1,8 @@
+.item{
+    background-color: darkslategrey;
+    color: wheat;
+    width: 200px;
+    list-style: none;
+    padding: 10px 5px;
+    margin-top: 3px;
+}
