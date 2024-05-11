@@ -1,0 +1,47 @@
+<div class="dashboard-container">
+  <div style="display: flex;">
+    <div style="width: 50%">
+      <h2>Dashboard</h2>
+    </div>
+    <div style="width: 50%; text-align: right;">
+      <button class="create-task-btn" (click)="OpenCreateTaskForm()">Create Task</button>
+      <button class="create-task-btn" (click)="getAllTasks()">Fetch Tasks</button>
+      <button class="create-task-btn">Clear Tasks</button>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="dashboard-item-container">
+
+    <!-- <div class="sb sb-error" *ngIf="errorMessage">{{ errorMessage }}</div> -->
+    <div class="loader" *ngIf="isLoading"></div>
+    <div style="text-align: center;" *ngIf="tasks.length < 1">
+      <h2>No task has been created yet!</h2>
+    </div>
+
+    <ng-container *ngIf="!isLoading">
+      <div class="task-item" [ngClass]="'task-' + task.status" *ngFor="let task of tasks">
+        <div class="task-title">
+          <h3>{{ task.title }}</h3>
+        </div>
+        <p><b>Assigned to: </b>{{ task.assignedTo }}</p>
+        <p><b>Priority: </b>{{ task.priority.toUpperCase() }}</p>
+        <p><b>Status: </b>{{ task.status.toUpperCase() }}</p>
+        <div class="task-action-icons">
+          <button class="task-action-btn" title="Detail" (click)="detailTask(task)">
+            <i class="fas fa-info-circle" aria-hidden="true"></i>
+          </button>
+          <button class="task-action-btn" title="Edit" (click)="OpenCreateTaskForm(task.id)">
+            <i class="fa-regular fa-pen-to-square"></i>
+          </button>
+          <button class="task-action-btn" title="Delete" (click)="deleteTask(task.id)">
+            <i class="fas fa-trash" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+

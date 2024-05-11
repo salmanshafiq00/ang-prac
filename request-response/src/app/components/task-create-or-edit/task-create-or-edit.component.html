@@ -1,0 +1,114 @@
+<div class="modal-header">
+  <h5 class="modal-title">{{ modalTitle }}</h5>
+  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+    (click)="closeModal('clzbtn')"></button>
+</div>
+<div class="modal-body">
+
+  <div>
+    <form #form="ngForm" (ngSubmit)="formSubmit(form)">
+      <div class="row">
+        <div class="col-md-12">
+          <label for="title">Title</label>
+          <input type="text" name="title" id="title" class="form-control" ngModel #title="ngModel"
+            [(ngModel)]="task.title" required>
+          <div>
+            <span class="text-danger" *ngIf="title.touched && title.errors">This field is required</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <label for="desc">Description</label>
+          <input type="text" name="desc" class="form-control" id="desc" ngModel [(ngModel)]="task.desc">
+          <div>
+            <span class="text-danger" *ngIf="form.controls['desc']?.touched && form.controls['desc']?.errors">This field
+              is required</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="assignedTo"> Assigned To </label>
+          <input type="text" class="form-control" name="assignedTo" id="assignedTo" ngModel #assignto="ngModel"
+            [(ngModel)]="task.assignedTo" required>
+          <div>
+            <span class="text-danger" *ngIf="assignto.touched && assignto.errors">This field is required</span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="createdon"> Created On</label>
+          <div class="input-group">
+            <input name="createdOn" class="form-control" id="createdOn" placeholder="yyyy-mm-dd" ngbDatepicker
+              [(ngModel)]="task.createdOn" #dp="ngbDatepicker" ngModel #createdOn="ngModel"
+              [minDate]="{year: 2024, month: 1, day: 1}" required>
+            <button class="btn btn-outline-secondary" type="button" (click)="dp.toggle()">
+              <i class="bi bi-calendar3"></i>
+            </button>
+          </div>
+          <div>
+            <span class="text-danger" *ngIf="createdOn.touched && createdOn.errors?.['required']">This field is
+              required</span>
+            <span class="text-danger" *ngIf="createdOn.touched && createdOn.errors?.['minDate']">Date should more than
+              current year</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="priority"> Priority </label>
+          <!-- <input type="text" name="priority" class="form-control" id="priority" ngModel [(ngModel)]="task.priority"
+            required> -->
+            <select class="form-select" name="priority" class="form-control" id="priority" ngModel [(ngModel)]="task.priority"
+            required>
+              <option value="">Choose Priority</option>
+              <option value="Low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+              <option value="severe">Severe</option>
+            </select>
+          <div>
+            <span class="text-danger"
+              *ngIf="form.controls['priority']?.touched && form.controls['priority']?.errors">This field is
+              required</span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="status"> Status </label>
+          <!-- <input type="text" class="form-control" name="status" id="status" ngModel [(ngModel)]="task.status"
+            #status="ngModel"> -->
+          <select class="form-select" name="status" id="status" ngModel [(ngModel)]="task.status" #status="ngModel">
+            <option value="">Choose Status</option>
+            <option value="open">Open</option>
+            <option value="started">Started</option>
+            <option value="in-progress">In Progress</option>
+            <option value="complete">Complete</option>
+          </select>
+          <div>
+            <span class="text-danger" *ngIf="status.touched && status.errors">This field is required</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <button type="button" class="btn btn-danger btn-cancel" (click)="closeModal('clzbtn')">Close</button>
+        </div>
+        <div class="col-md-6">
+          <button type="submit" class="btn btn-submit"
+            [ngClass]="{'btn-primary': !form.invalid, 'btn-secondary': form.invalid}"
+            [disabled]="form.invalid">Submit</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+</div>
+
+<ng-template #errorTemplate>
+  Update Failed!
+</ng-template>
